@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
@@ -34,7 +35,7 @@ namespace miniArrays
             Console.WriteLine(numbers.Length);
             Console.WriteLine("Welcome! You are number {0}", numbers[5]);
             */
-            string[] names = new string[] { "Tade", "Mide", "Omolabake" };
+            // string[] names = new string[] { "Tade", "Mide", "Omolabake" };
             /*
             for (int i = 0; i < names.Length; i++)
             {
@@ -51,6 +52,7 @@ namespace miniArrays
             */
             // Flipping words in a sentence.
 
+            /*
             string zig = "You can be good " + "You are already good.";
             char[] orukoArray = zig.ToCharArray();
             Array.Reverse(orukoArray);
@@ -60,6 +62,36 @@ namespace miniArrays
             }
             //Console.Write
             Console.ReadLine();
+            */
+
+            // Methods
+            Console.WriteLine("What is the name of your city: ");
+            string userCity = Console.ReadLine();
+            Console.WriteLine("And your favorite sport? ");
+            string userFavSport = Console.ReadLine();
+            string messageToReverse = userCity + " " + userFavSport;
+            ReverseString(messageToReverse);
+            Console.ReadLine();
+
         }
+        /*
+        private static void HelloWorld()
+        {
+            Console.WriteLine("Hello World!");
+        }
+        */
+
+        private static void ReverseString(string message)
+        {
+            
+            char[] orukoArray = message.ToCharArray();
+            Array.Reverse(orukoArray);
+            foreach (char omoChar in orukoArray)
+            {
+                Console.Write(omoChar);
+            }
+
+        }
+
     }
 }
