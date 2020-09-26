@@ -67,13 +67,18 @@ namespace miniArrays
             // Methods
             Console.WriteLine("What is the name of your city: ");
             string userCity = Console.ReadLine();
-            
+            string reversedCity = ReverseString(userCity);
+
             Console.WriteLine("And your favorite sport? ");
             string userFavSport = Console.ReadLine();
+            string reversedFavSport = ReverseString(userFavSport);
 
             Console.Write("Results: ");
-            ReverseString(userCity);
-            ReverseString(userFavSport);
+            PrintString(reversedCity);
+            PrintString(reversedFavSport);
+
+            Console.Write("Results: ");
+            PrintString(reversedCity, reversedFavSport);
             // string messageToReverse = userCity + " " + userFavSport;
             // ReverseString(messageToReverse);
             Console.ReadLine();
@@ -86,19 +91,30 @@ namespace miniArrays
         }
         */
 
-        private static void ReverseString(string message)
+        private static string ReverseString(string message)
         {
             
             char[] orukoArray = message.ToCharArray();
             Array.Reverse(orukoArray);
+            return String.Concat(orukoArray);
+        }
+
+        private static void PrintString(string message)
+        {
+            Console.Write(message);
+            /*
             foreach (char omoChar in orukoArray)
             {
                 Console.Write(omoChar);
             }
+            */
             //To have a space after each call result:
             Console.Write(" ");
 
         }
-
+        public static void PrintString(string reversedCity, string reversedFavSport)
+        {
+            Console.Write(reversedCity + " " + reversedFavSport);
+        }
     }
 }
