@@ -67,10 +67,15 @@ namespace miniArrays
             // Methods
             Console.WriteLine("What is the name of your city: ");
             string userCity = Console.ReadLine();
+            
             Console.WriteLine("And your favorite sport? ");
             string userFavSport = Console.ReadLine();
-            string messageToReverse = userCity + " " + userFavSport;
-            ReverseString(messageToReverse);
+
+            Console.Write("Results: ");
+            ReverseString(userCity);
+            ReverseString(userFavSport);
+            // string messageToReverse = userCity + " " + userFavSport;
+            // ReverseString(messageToReverse);
             Console.ReadLine();
 
         }
@@ -90,6 +95,8 @@ namespace miniArrays
             {
                 Console.Write(omoChar);
             }
+            //To have a space after each call result:
+            Console.Write(" ");
 
         }
 
